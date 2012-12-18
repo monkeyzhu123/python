@@ -1,0 +1,33 @@
+#!/usr/bin/python
+
+#import some modules
+import sys
+import os
+import time
+################################################
+#define some variables
+tar_dir='/root/tar'
+
+#aquire timeformat such as 20121218
+now_time=time.strftime('%Y%m%d')
+
+#those file need tar!
+source=["/root/test1.sh","/root/test.txt"]
+
+#judge the dir exist or not
+if os.path.exists(tar_dir):
+    pass    #there you can do other thing
+else:
+    os.system("mkdir -p /root/tar")
+
+#create compressed filename
+target=tar_dir+os.sep+now_time+'.zip'
+
+zip_command = "zip -qr '%s' %s" % (target,' '.join(source))
+
+
+#judge the ruturn value .0 is succeed
+if os.system(zip_command)==0:
+    print("backup ok")
+else:
+    print("backup failed")
