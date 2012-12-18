@@ -23,7 +23,7 @@ else:
 #create compressed filename
 target=tar_dir+os.sep+now_time+'.zip'
 
-zip_command = "zip -qr '%s' %s" % (target,' '.join(source))
+zip_command = "zip -qr %s %s" % (target,' '.join(source))
 
 
 #judge the ruturn value .0 is succeed
