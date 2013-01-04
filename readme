@@ -1,3 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env python
 
-echo "hello world"
+'''do you want say "hello world"£¿'''
+
+print("hello world!")
+
+
